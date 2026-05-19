@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+spawn npm run build
+expect {
+    "failure" { exit 1 }
+    eof
+}
+
+spawn scp -r dist root@hw.yangfan.world:/opt/project/pw_timer
+expect "password:"
+send "yf774109+++\r"
+expect eof

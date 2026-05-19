@@ -1,0 +1,55 @@
+:root {
+  --primary: #7C6F64;
+  --accent: #E8985E;
+  --background: #FAF7F2;
+  --card: #FFFFFF;
+  --text: #3D3D3D;
+  --secondary: #8A8A8A;
+  --border: #EAE0D5;
+  --success: #7CAE7A;
+  --danger: #D96E6E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans SC', 'DM Sans', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.n-data-table th {
+  text-align: center !important;
+  background: #F5F5F5 !important;
+  color: var(--text) !important;
+  font-weight: 500 !important;
+}
+
+.n-data-table td {
+  text-align: center !important;
+}
+
+.n-card {
+  border-radius: 12px !important;
+  transition: all 200ms ease-out;
+}
+
+.n-button {
+  border-radius: 8px !important;
+  transition: all 200ms ease-out !important;
+}
+
+.n-input-number {
+  width: 100%;
+}
