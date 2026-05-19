@@ -1,5 +1,35 @@
-# Vue 3 + Vite
+# 陪玩计时器 (pw-timer)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+专为陪玩场景设计的计时计费工具。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 功能
+
+- 一键开始/结束计时
+- 手动填写时间记录
+- 自动计算时长和费用
+- 余额管理
+- 本地数据持久化
+
+## 技术栈
+
+- Vue 3 + Composition API
+- Vite
+- NaiveUI
+
+## 预览
+
+部署地址: https://pw.yangfan.world
+
+## 本地开发
+
+```bash
+npm install
+npm run dev
+```
+
+## 部署
+
+```bash
+npm run build
+# 构建产物在 dist 目录
+```
