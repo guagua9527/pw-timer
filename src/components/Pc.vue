@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
+defineEmits(['switchToMobile'])
+
 const STORAGE_KEY = 'playtime_records'
 
 const defaultPrice = ref(0)
@@ -282,11 +284,12 @@ const columns = [
 
 <template>
   <n-layout style="min-height: 100vh; background: #FAF7F2;">
-    <n-layout-header style="padding: 16px 24px; background: #FFFFFF; border-bottom: 1px solid #EAE0D5;">
+    <n-layout-header style="padding: 16px 24px; background: #FFFFFF; border-bottom: 1px solid #EAE0D5; display: flex; justify-content: center; align-items: center;">
       <n-space align="center" justify="center" :size="12">
         <span style="font-size: 24px;">🕐</span>
         <n-text strong style="font-size: 20px; color: #3D3D3D;">瓜瓜的陪玩计时工具</n-text>
       </n-space>
+      <n-button size="small" style="position: absolute; right: 24px;" @click="$emit('switchToMobile')">手机版</n-button>
     </n-layout-header>
 
     <n-layout-content style="padding: 24px;">

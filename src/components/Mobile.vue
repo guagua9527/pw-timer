@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
+defineEmits(['switchToPc', 'resetPreference'])
+
 const STORAGE_KEY = 'playtime_records'
 
 const defaultPrice = ref(0)
@@ -246,10 +248,13 @@ loadData()
       <!-- Header -->
       <header class="mobile-header">
         <span class="header-icon">🕐</span>
-        <span class="header-title">陪玩计时</span>
-        <button class="settings-btn" @click="showSettings = !showSettings">
-          {{ showSettings ? '✕' : '⚙' }}
-        </button>
+        <span class="header-title">瓜瓜的陪玩计时工具</span>
+        <div class="header-actions">
+          <button class="view-toggle-btn" @click="$emit('switchToPc')">电脑版</button>
+          <button class="settings-btn" @click="showSettings = !showSettings">
+            {{ showSettings ? '✕' : '⚙' }}
+          </button>
+        </div>
       </header>
 
       <!-- Timer Button -->
@@ -299,6 +304,9 @@ loadData()
           <label>扣减单价</label>
           <n-input-number v-model:value="deductPrice" :min="0" :precision="0" size="small" style="width: 80px;" />
           <span>¥/h</span>
+        </div>
+        <div class="setting-item">
+          <button class="reset-btn" @click="$emit('resetPreference')">重置设备偏好</button>
         </div>
       </div>
 
@@ -438,6 +446,32 @@ export default {
   font-size: 18px;
   font-weight: bold;
   color: #3D3D3D;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-toggle-btn {
+  padding: 6px 12px;
+  border: 1px solid #EAE0D5;
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #3D3D3D;
+  cursor: pointer;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #EAE0D5;
+  background: #FFFFFF;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #8A8A8A;
+  cursor: pointer;
 }
 
 .settings-btn {
